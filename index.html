@@ -1,115 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
     <header>
+      <!-- -------- # 1 -------- -->
+      <nav class="nav">
+        <div class="btn-bars">
+          <i class="fa-solid fa-bars bars navOpenBtn navBtn"></i>
+          <i class="fa-solid fa-xmark navCloseBtn navBtn"></i>
+        </div>
+        <a href="#" class="logo">LZ</a>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+        <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>
+        <div class="search-box">
+          <input type="search" placeholder="Serch..." />
+          <button class="btn-search">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </button>
+        </div>
+      </nav>
 
+      <script>
+        const nav = document.querySelector(".nav");
+        const searchIcon = document.querySelector("#searchIcon");
+        const navOpenBtn = document.querySelector(".navOpenBtn");
+        const navCloseBtn = document.querySelector(".navCloseBtn");
+
+        searchIcon.addEventListener("click", () => {
+          nav.classList.toggle("openSearch");
+        //   nav.classList.remove("openNav");
+          if (nav.classList.contains("openSearch")) {
+            return searchIcon.classList.replace(
+              "fa-magnifying-glass",
+              "fa-xmark"
+            );
+          }
+          searchIcon.classList.replace("fa-xmark", "fa-magnifying-glass");
+        });
+
+        icons = document.querySelector(".btn-bars");
+        icons.addEventListener("click", () => {
+          nav.classList.toggle("openNav");
+        });
+
+        // navOpenBtn.addEventListener("click", () => {
+        // //   nav.classList.add("openNav");
+        //   nav.classList.remove("openSearch");
+        //   searchIcon.classList.replace("fa-xmark", "fa-magnifying-glass");
+        // });
+        // navCloseBtn.addEventListener("click", () => {
+        //   nav.classList.remove("openNav");
+        // });
+      </script>
+
+      <!-- ------- # 2 ------- -->
+      <!-- <input type="checkbox" id="check" />
+      <nav class="nav">
+        <div class="icon">LZ</div>
+        <div class="search-box">
+          <input type="search" placeholder="Search..." />
+          <span>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+        <label for="check" class="bar">
+          <span>
+            <i class="fa-solid fa-bars" id="bars"></i>
+          </span>
+          <span>
+            <i class="fa-solid fa-xmark" id="times"></i>
+          </span>
+        </label>
+      </nav> -->
+
+      <!-- ------- # 3 ------- -->
+      <!-- <nav class="nav">
+        <ul>
+          <li class="logo">LZ</li>
+          <li class="btn-bars">
+            <i class="fa-solid fa-bars bars navOpenBtn navBtn"></i>
+            <i class="fa-solid fa-xmark navCloseBtn navBtn"></i>
+          </li>
+          <div class="items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+          </div>
+          <li class="search-icon">
+            <input type="search" placeholder="Search..." />
+            <label class="icon">
+              <i class="fa-solid fa-magnifying-glass search"></i>
+            </label>
+          </li>
+        </ul>
+      </nav>
+      <script>
+        const nav = document.querySelector(".nav");
+
+        icons = document.querySelector(".btn-bars");
+        icons.addEventListener("click", () => {
+          nav.classList.toggle("openNav");
+        }); -->
+      </script> 
     </header>
+
     <main>
-       <h1>project</h1>
-        <div class="buttoms">
-      <a class="buttom">start</a>
+      <h1>projects</h1>
+      <div class="buttoms">
+        <a class="buttom">start</a>
 
-       <div class="link"></div>
+        <div class="link"></div>
 
-       <button class="btn">подписаться</button>
-       </div>
-       <div class="position">
-           <ul class="menu">
-               <li class="menu-item">
-                   <a href="" class="menu-link">комплектующие</a>
-                   <ul class="submenu">
-                       <li><a href="">процессоры</a></li>
-                       <li><a href="">мониторы</a></li>
-                       <li><a href="">видеокарты</a></li>
-                   </ul>
-               </li>
-               <li class="menu-item">
-                <a href="" class="menu-link">товары для дома</a>
-                <ul class="submenu">
-                    <li><a href="">кондиционеры</a></li>
-                    <li><a href="">обогреватели</a></li>
-                    <li><a href="">пылесосы</a></li>
-                </ul>
-            </li>
-            <li class="menu-item">
-                <a href="" class="menu-link">товары для кухни</a>
-                <ul class="submenu">
-                    <li><a href="">холодильники</a></li>
-                    <li><a href="">варочные плиты</a></li>
-                    <li><a href="">мультиварки</a></li>
-                </ul>
-            </li>
-           </ul>
-       </div>
-
-      <div class="anime">
-          <ul class="menu-one">
-              <li class="menu-one__item"><a href="" class="menu-one__link">блог</a></li>
-              <li class="menu-one__item"><a href="" class="menu-one__link">профиль</a></li>
-              <li class="menu-one__item"><a href="" class="menu-one__link">галерея</a></li>
-          </ul>
+        <button class="btn1">подписаться</button>
+      </div>
+      <div class="position">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="#" class="menu-link">комплектующие</a>
+            <ul class="submenu">
+              <li><a href="#">процессоры</a></li>
+              <li><a href="#">мониторы</a></li>
+              <li><a href="#">видеокарты</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">товары для дома</a>
+            <ul class="submenu">
+              <li><a href="#">кондиционеры</a></li>
+              <li><a href="#">обогреватели</a></li>
+              <li><a href="#">пылесосы</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#" class="menu-link">товары для кухни</a>
+            <ul class="submenu">
+              <li><a href="#">холодильники</a></li>
+              <li><a href="#">варочные плиты</a></li>
+              <li><a href="#">мультиварки</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
 
-     <form class="form" autocomplete="off">
-         <div class="form-field">
-             <input type="text" class="form-input" name="name" id="name" placeholder=" "/>
-             <label for="name" class="form-lable">имя</label>
-         </div>
+      <div class="anime">
+        <ul class="menu-one">
+          <li class="menu-one__item">
+            <a href="#" class="menu-one__link">блог</a>
+          </li>
+          <li class="menu-one__item">
+            <a href="#" class="menu-one__link">профиль</a>
+          </li>
+          <li class="menu-one__item">
+            <a href="#" class="menu-one__link">галерея</a>
+          </li>
+        </ul>
+      </div>
 
-         <div class="form-field">
-            <input type="email" class="form-input" name="mail" id="mail" placeholder=" "/>
-            <label for="mail" class="form-lable">почта</label>
+      <!-- <form class="form" autocomplete="off">
+        <div class="form-field">
+          <input
+            type="text"
+            class="form-input"
+            name="name"
+            id="name"
+            placeholder=" "
+          />
+          <label for="name" class="form-lable">имя</label>
+        </div>
+
+        <div class="form-field">
+          <input
+            type="email"
+            class="form-input"
+            name="mail"
+            id="mail"
+            placeholder=" "
+          />
+          <label for="mail" class="form-lable">почта</label>
         </div>
         <button type="submit">оставить заявку</button>
-     </form>
+      </form> -->
+      <div class="box">
+        <button class="btn" onClick="cad(this)">
+          <img src="./images/котик.jpeg" class="cat card" />
+          <img src="./images/собака.jpeg" class="dog card" />
+        </button>
 
-     
+        <button style="cursor: pointer;">
+          <i class="fa-solid fa-bars" onclick="chIcon(this)"></i>
+          <!-- <i class="fa-solid fa-xmark"></i> -->
+        </button>
 
+        <button class="anime1"></button>
 
-     <section class="products">
-        <div class="container">
-          <p class="products__text">100% natural</p>
-          <h2 class="products__title">products</h2>
-          <ul class="products__list">
-              <li class="products__item">
-                  <div class="products-card products-card--pink">
-                      <h3 class="products-card__title">ice cream</h3>
-                      <p class="products-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. dolore magna aliqua facilisis.</p>
-                      <button class="products__button" type="button">*</button>
-                  </div>
-              </li>
-    
-              <li class="products__item">
-                <div class="products-card products-card--beige">
-                    <h3 class="products-card__title">ice coffee</h3>
-                    <p class="products-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. dolore magna aliqua facilisis.</p>
-                    <button class="products__button" type="button">*</button>
-                </div>
-            </li>
-    
-            <li class="products__item">
-                <div class="products-card products-card--green">
-                    <h3 class="products-card__title">milkshakes</h3>
-                    <p class="products-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. dolore magna aliqua facilisis.</p>
-                    <button class="products__button" type="button"></button>
-                     
-                </div>
-            </li>
-    
-          </ul>
-    
-        </div>
-    </section>
+      </div>
+
+      <script>
+        const section = document.querySelector(".box"),
+          icons = document.querySelector(".btn");
+        icons.onclick = () => {
+          section.classList.toggle("doge");
+        };
+
+        let chIcon = function (icon) {
+          icon.classList.toggle("fa-xmark");
+        };
+      </script>
+      <script
+        src="https://kit.fontawesome.com/8cda26596b.js"
+        crossorigin="anonymous"
+      ></script>
     </main>
-    <footer>
-
-    </footer>
-</body>
+    <footer></footer>
+  </body>
 </html>
